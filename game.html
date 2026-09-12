@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Game - FreeGameHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<header class="header">
+
+<a href="index.html" class="logo">
+  <span>FG</span>
+  FreeGameHub
+</a>
+
+<nav>
+
+<a href="index.html#games">
+  Games
+</a>
+
+<a href="index.html#categories">
+  Categories
+</a>
+
+<a href="index.html#about">
+  About
+</a>
+
+</nav>
+
+</header>
+
+
+<main>
+
+<section
+  id="gameDetails"
+  class="section"
+>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="footer-main">
+
+<div>
+
+<div class="footer-logo">
+FreeGameHub
+</div>
+
+<p>
+Discover great Android games.
+</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 FreeGameHub
+</div>
+
+</footer>
+
+
+<script>
+
+const games = [
+
+{
+id:"pixel-rush",
+name:"Pixel Rush",
+category:"Arcade",
+icon:"🚀",
+description:"A fast arcade game with simple controls and exciting challenges.",
+version:"1.0.0",
+size:"18 MB",
+android:"Android 7.0+",
+download:"https://example.com/authorized-download"
+},
+
+{
+id:"open-adventure",
+name:"Open Adventure",
+category:"Adventure",
+icon:"🗺️",
+description:"Explore a small world, complete quests and discover hidden areas.",
+version:"1.2.0",
+size:"95 MB",
+android:"Android 8.0+",
+download:"https://example.com/authorized-download"
+},
+
+{
+id:"puzzle-lab",
+name:"Puzzle Lab",
+category:"Puzzle",
+icon:"🧩",
+description:"Relaxing logic puzzles with increasingly difficult challenges.",
+version:"2.1.0",
+size:"32 MB",
+android:"Android 6.0+",
+download:"https://example.com/authorized-download"
+},
+
+{
+id:"shadow-action",
+name:"Shadow Action",
+category:"Action",
+icon:"⚔️",
+description:"A lightweight action game designed for quick mobile sessions.",
+version:"1.0.3",
+size:"72 MB",
+android:"Android 8.0+",
+download:"https://example.com/authorized-download"
+},
+
+{
+id:"street-racer",
+name:"Street Racer",
+category:"Racing",
+icon:"🏎️",
+description:"Race through exciting tracks and compete for the fastest time.",
+version:"1.4.0",
+size:"110 MB",
+android:"Android 8.0+",
+download:"https://example.com/authorized-download"
+},
+
+{
+id:"space-runner",
+name:"Space Runner",
+category:"Arcade",
+icon:"🌌",
+description:"Dodge obstacles and race through a colorful space track.",
+version:"1.4.0",
+size:"41 MB",
+android:"Android 7.0+",
+download:"https://example.com/authorized-download"
+}
+
+];
+
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+const id =
+params.get("id");
+
+
+const game =
+games.find(
+item => item.id === id
+);
+
+
+const details =
+document.getElementById(
+"gameDetails"
+);
+
+
+if (!game) {
+
+details.innerHTML = `
+
+<h1>Game not found</h1>
+
+<p>
+The requested game does not exist.
+</p>
+
+<a
+href="index.html"
+class="button primary"
+>
+Back to games
+</a>
+
+`;
+
+} else {
+
+
+details.innerHTML = `
+
+<a
+href="index.html#games"
+class="button secondary"
+>
+← Back to games
+</a>
+
+
+<div
+style="
+margin-top:25px;
+padding:70px 20px;
+text-align:center;
+border:1px solid #293652;
+border-radius:25px;
+background:linear-gradient(135deg,#28345e,#141c31);
+font-size:100px;
+"
+>
+
+${game.icon}
+
+</div>
+
+
+<div style="margin-top:30px">
+
+<div class="game-category">
+${game.category}
+</div>
+
+
+<h1 style="font-size:45px">
+${game.name}
+</h1>
+
+
+<p
+style="
+color:#9da9c4;
+font-size:18px;
+"
+>
+${game.description}
+</p>
+
+
+<a
+href="${game.download}"
+target="_blank"
+rel="noopener"
+class="button primary"
+>
+⬇ Download / Official Link
+</a>
+
+
+<div
+style="
+margin-top:30px;
+padding:25px;
+background:#11192c;
+border:1px solid #293652;
+border-radius:16px;
+"
+>
+
+<h2>
+Game Information
+</h2>
+
+<p>
+<strong>Version:</strong>
+${game.version}
+</p>
+
+<p>
+<strong>Size:</strong>
+${game.size}
+</p>
+
+<p>
+<strong>Android:</strong>
+${game.android}
+</p>
+
+<p>
+<strong>Category:</strong>
+${game.category}
+</p>
+
+</div>
+
+
+<div
+style="
+margin-top:25px;
+padding:25px;
+background:#10182a;
+border:1px solid #293652;
+border-radius:16px;
+"
+>
+
+<h3>
+Download information
+</h3>
+
+<p style="color:#9da9c4">
+
+Only distribute APK files that you
+created yourself or that you have
+permission to redistribute.
+
+</p>
+
+</div>
+
+
+</div>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
