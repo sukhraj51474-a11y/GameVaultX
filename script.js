@@ -5,25 +5,27 @@
 const games = [
 
   {
-    id: "pixel-rush",
+    id: "supertuxkart",
 
-    name: "Pixel Rush",
+    name: "SuperTuxkart",
 
-    category: "Arcade",
+    category: "Racing",
 
-    icon: "🚀",
+    icon: "🏎️",
 
     description:
-      "A fast arcade game with simple controls and exciting challenges.",
+      "A free and open world kart racing game.",
 
-    version: "1.0.0",
+    version: "1.5",
 
-    size: "18 MB",
+    size: "184 MB",
 
     android: "Android 7.0+",
 
     download:
-      "https://example.com/authorized-download"
+      "https://supertuxkart.net/Download"
+      
+
   },
 
 
